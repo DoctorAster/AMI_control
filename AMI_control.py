@@ -10,6 +10,8 @@ def login (action_id, username = 'admin', password = 'amp111'):
     output = telnetObj.read_until(ami_resp)
     command_login = 'Login'
     action_id += 1
-
-
-
+    ami_command_login_str = 'Action: {}\n' \
+                            'ActionID: {}\n' \
+                            'Username: {}\n' \
+                            'Secret: {}\n\n'.format(command_login, action_id, username, password)
+    
